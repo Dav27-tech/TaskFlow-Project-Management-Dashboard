@@ -19,7 +19,7 @@ export default function StatisticCard() {
       <div>
         <h3>Team Members</h3>
         {teamList.map((member) => (
-          <p>{member.name}</p>
+          <p key={member.id}>{member.name}</p>
         ))}
       </div>
     </div>
