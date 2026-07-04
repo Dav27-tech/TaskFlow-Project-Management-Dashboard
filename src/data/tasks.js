@@ -26,7 +26,7 @@ const taskList = [
     description: "Design the database schema for customers.",
     priority: "High",
     status: true,
-    assigned_member: [2],
+    assigned_member: [4, 8],
     due_date: "2026-07-12",
   },
   {
@@ -126,7 +126,7 @@ const taskList = [
     description: "Implement CRUD operations for books.",
     priority: "High",
     status: true,
-    assigned_member: [3, 6],
+    assigned_member: [3, 6, 7],
     due_date: "2026-07-28",
   },
   {
@@ -136,7 +136,7 @@ const taskList = [
     description: "Create an interactive event calendar.",
     priority: "Medium",
     status: false,
-    assigned_member: [7, 8],
+    assigned_member: [7, 8, 3],
     due_date: "2026-09-10",
   },
   {
