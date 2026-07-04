@@ -11,8 +11,7 @@ export default function TaskCard() {
   const [tasks, setTasks] = useState(taskList);
 
   const task = tasks.find((t) => t.id === Number(id));
-  console.log(tasks.map((t) => t.id));
-  console.log(Number(id));
+
   if (!task) {
     return <h2>Task not found</h2>;
   }
@@ -67,13 +66,18 @@ export default function TaskCard() {
               onChange={handleChange}
             />
 
-            <input
+            <select
               name="priority"
               value={editingTask.priority}
               onChange={handleChange}
-            />
+            >
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
 
             <input
+              type="date"
               name="due_date"
               value={editingTask.due_date}
               onChange={handleChange}
@@ -85,6 +89,7 @@ export default function TaskCard() {
           </>
         ) : (
           <>
+            <button onClick={() => navigate(`/tasks`)}>Return</button>
             <div>
               <h2>{task.title}</h2>
 
