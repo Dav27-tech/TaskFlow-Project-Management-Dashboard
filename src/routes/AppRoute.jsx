@@ -10,7 +10,7 @@ export default function AppRoute() {
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/tasks" element={<Tasks />} />
-      <Route path="/tasks/:id" element={<TaskDetails />} />
+      <Route path="/task/:id" element={<TaskDetails />} />
     </Routes>
   );
 }
