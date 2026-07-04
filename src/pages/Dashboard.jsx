@@ -1,9 +1,13 @@
-import StatisticCard from "../components/statisticCard";
+import Sidebar from "../components/Sidebar";
+import StatisticCard from "../components/StatisticCard";
 
 export default function Dashboard() {
   return (
     <div>
-      <StatisticCard />
+      <Sidebar />
+      <main>
+        <StatisticCard />
+      </main>
     </div>
   );
 }
