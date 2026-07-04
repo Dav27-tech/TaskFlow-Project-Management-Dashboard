@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import taskList from "../data/tasks";
 import teamList from "../data/team_members";
@@ -10,7 +10,10 @@ export default function TaskCard() {
 
   const [tasks, setTasks] = useState(taskList);
 
-  const task = tasks.find((t) => t.id === Number(id));
+  const task = useMemo(
+    () => tasks.find((t) => t.id === Number(id)),
+    [tasks, id],
+  );
 
   if (!task) {
     return <h2>Task not found</h2>;
@@ -49,6 +52,19 @@ export default function TaskCard() {
     setEditingTask(null);
   };
 
+  const handleMemberChange = (memberId) => {
+    setEditingTask((prev) => {
+      const alreadyAssigned = prev.assigned_member.includes(memberId);
+
+      return {
+        ...prev,
+        assigned_member: alreadyAssigned
+          ? prev.assigned_member.filter((id) => id !== memberId)
+          : [...prev.assigned_member, memberId],
+      };
+    });
+  };
+
   return (
     <div>
       <div key={task.id}>
@@ -75,6 +91,18 @@ export default function TaskCard() {
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
+
+            {teamList.map((member) => (
+              <label key={member.id}>
+                <input
+                  type="checkbox"
+                  checked={editingTask.assigned_member.includes(member.id)}
+                  onChange={() => handleMemberChange(member.id)}
+                />
+
+                {member.name}
+              </label>
+            ))}
 
             <input
               type="date"
@@ -110,9 +138,12 @@ export default function TaskCard() {
             <div>
               <h3>Assigned Members</h3>
 
-              {task.assigned_member.map((member, index) => (
-                <p key={index}>{teamList[index].name}</p>
-              ))}
+              {task.assigned_member.map((memberId) => {
+                const member = teamList.find((m) => m.id === memberId);
+                return (
+                  <p key={memberId}>{member ? member.name : "unkonw member"}</p>
+                );
+              })}
             </div>
 
             <button onClick={() => handleEdit(task)}>Edit</button>
