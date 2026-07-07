@@ -1,10 +1,11 @@
-import Sidebar from "../components/Sidebar";
+// Import main components
+import Navbar from "../components/Navbar";
 import StatisticCard from "../components/StatisticCard";
 
 export default function Dashboard() {
   return (
     <div>
-      <Sidebar />
+      <Navbar />
       <main>
         <StatisticCard />
       </main>
