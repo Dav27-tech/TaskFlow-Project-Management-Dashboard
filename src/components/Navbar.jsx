@@ -1,34 +1,51 @@
 import { User } from "lucide-react";
 import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
   return (
-    <header>
+    <header className="navbar">
       <div className="logo-section">
-        <p className="logo">T</p>
-        <p className="logo-text">TaskFlow</p>
+        <div className="logo">T</div>
+        <h2 className="logo-text">TaskFlow</h2>
       </div>
-      <div className="links">
-        <ul>
+
+      <nav className="nav-links">
+        <ul className="nav-list">
           <li>
-            <Link to="/">Dashboard</Link>
+            <Link className="nav-link" to="/">
+              Dashboard
+            </Link>
           </li>
+
           <li>
-            <Link to="/">Projects</Link>
+            <Link className="nav-link" to="/">
+              Projects
+            </Link>
           </li>
+
           <li>
-            <Link to="/tasks">Tasks</Link>
+            <Link className="nav-link" to="/tasks">
+              Tasks
+            </Link>
           </li>
+
           <li>
-            <Link to="/">Team</Link>
+            <Link className="nav-link" to="/">
+              Team
+            </Link>
           </li>
+
           <li>
-            <Link to="/">About</Link>
+            <Link className="nav-link" to="/">
+              About
+            </Link>
           </li>
         </ul>
-      </div>
+      </nav>
+
       <div className="avatar">
-        <User />
+        <User size={22} />
       </div>
     </header>
   );
