@@ -1,0 +1,89 @@
+.sidebar {
+  width: 320px;
+  min-height: 100vh;
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.sidebar h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+}
+
+.sidebar .form-group {
+  margin-bottom: 1rem;
+}
+
+.sidebar label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 0.35rem;
+}
+
+.sidebar input,
+.sidebar textarea,
+.sidebar select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.sidebar input:focus,
+.sidebar textarea:focus,
+.sidebar select:focus {
+  border-color: #6366f1;
+}
+
+.sidebar input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.sidebar textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 0.7rem;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.sidebar button:hover {
+  background: #4f46e5;
+}
