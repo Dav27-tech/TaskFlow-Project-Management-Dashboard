@@ -1,13 +1,17 @@
 import { useState } from "react";
-import taskList from "../data/tasks";
 import teamList from "../data/team_members";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import { useTasks } from "../components/Model";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+// Import the CSS style
+import "../styles/pages/Tasks.css";
 
 export default function Tasks() {
   const navigate = useNavigate();
 
-  const [tasks, setTasks] = useState(taskList);
+  const { tasks, setTasks } = useTasks();
   const handleClick = (id) => {
     navigate(`/task/${id}`);
   };
@@ -70,7 +74,7 @@ export default function Tasks() {
       priority: "Medium",
       status: false,
       assigned_member: [],
-      due_date: "",
+      due_date: null,
     });
   };
 
@@ -87,108 +91,133 @@ export default function Tasks() {
     });
   };
 
+  const updateField = (field, value) => {
+    setNewTask((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
   return (
-    <div>
-      <button onClick={() => navigate("/")}>Return</button>
+    <>
+      <div className="tasks-page">
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
+          statusFilter={statusFilter}
+          setStatusFilter={setStatusFilter}
+          priorityFilter={priorityFilter}
+          setPriorityFilter={setPriorityFilter}
+        />
 
-      <SearchBar
-        search={search}
-        setSearch={setSearch}
-        statusFilter={statusFilter}
-        setStatusFilter={setStatusFilter}
-        priorityFilter={priorityFilter}
-        setPriorityFilter={setPriorityFilter}
-      />
+        <div className="tasks-container">
+          <section className="tasks-list">
+            <h2 className="section-title">Project Tasks</h2>
 
-      {filteredTasks.map((task) => (
-        <>
-          <div
-            onClick={() => handleClick(task.id)}
-            key={task.id}
-            style={{ cursor: "pointer" }}
-          >
-            <h2>{task.title}</h2>
-            <div>
-              <p>Status : {task.status ? "Completed" : "Pending"}</p>
-              <p>Priority : {task.priority}</p>
-            </div>
-            <p>{task.description}</p>
-          </div>
-        </>
-      ))}
+            {filteredTasks.toReversed().map((task) => (
+              <div
+                key={task.id}
+                className="task-card"
+                onClick={() => handleClick(task.id)}
+              >
+                <div className="task-header">
+                  <h3>{task.title}</h3>
 
-      <div>
-        <h3>Create Task</h3>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Title</label>
-            <input
-              type="text"
-              name="title"
-              value={newTask.title}
-              onChange={handleChange}
-              placeholder="Enter task title"
-              required
-            />
-          </div>
+                  <span
+                    className={
+                      task.status ? "status completed" : "status pending"
+                    }
+                  >
+                    {task.status ? "Completed" : "Pending"}
+                  </span>
+                </div>
 
-          <div>
-            <label>Description</label>
-            <textarea
-              name="description"
-              value={newTask.description}
-              onChange={handleChange}
-              placeholder="Enter task description"
-              rows={4}
-              required
-            />
-          </div>
+                <p className="task-description">{task.description}</p>
 
-          <div>
-            <label>Priority</label>
-            <select
-              name="priority"
-              value={newTask.priority}
-              onChange={handleChange}
-            >
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
-            </select>
-          </div>
+                <div className="task-footer">
+                  <span className="priority">{task.priority}</span>
 
-          <div>
-            <label>Due Date</label>
-            <input
-              type="date"
-              name="due_date"
-              value={newTask.due_date}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label>Assigned Members</label>
-
-            {teamList.map((member) => (
-              <div key={member.id}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={newTask.assigned_member.includes(member.id)}
-                    onChange={() => handleMemberChange(member.id)}
-                  />
-
-                  {member.name}
-                </label>
+                  <span>{task.due_date}</span>
+                </div>
               </div>
             ))}
-          </div>
+          </section>
 
-          <button type="submit">Add Task</button>
-        </form>
+          <section className="create-task">
+            <h2 className="section-title">Create Task</h2>
+
+            <form onSubmit={handleSubmit}>
+              <div className="row-input">
+                <label>Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  value={newTask.title}
+                  onChange={handleChange}
+                  placeholder="Enter task title"
+                  required
+                />
+              </div>
+
+              <div className="row-input">
+                <label>Description</label>
+                <textarea
+                  name="description"
+                  value={newTask.description}
+                  onChange={handleChange}
+                  placeholder="Enter task description"
+                  rows={4}
+                  required
+                />
+              </div>
+
+              <div className="row-input">
+                <label>Priority</label>
+                <select
+                  name="priority"
+                  value={newTask.priority}
+                  onChange={handleChange}
+                >
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </div>
+
+              <div className="row-input">
+                <label>Due Date</label>
+                <DatePicker
+                  selected={newTask.due_date}
+                  onChange={(date) =>
+                    updateField("due_date", date.toLocaleDateString())
+                  }
+                  dateFormat="dd/MM/yyyy"
+                  placeholderText="Choose a due Date"
+                  className="date-picker"
+                />
+              </div>
+
+              <div>
+                <h3 className="assigned_title">Assigned Members</h3>
+                <hr />
+
+                {teamList.map((member) => (
+                  <div key={member.id} className="assigned_card">
+                    <label>{member.name}</label>
+                    <input
+                      type="checkbox"
+                      checked={newTask.assigned_member.includes(member.id)}
+                      onChange={() => handleMemberChange(member.id)}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button type="submit">Add Task</button>
+            </form>
+          </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
