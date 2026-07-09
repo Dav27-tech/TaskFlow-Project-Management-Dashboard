@@ -1,14 +1,12 @@
-// Import the React router
 import { BrowserRouter } from "react-router-dom";
-// Import the App router
+import Navbar from "./components/Navbar";
 import AppRoute from "./routes/AppRoute";
 
 export default function App() {
   return (
-    <>
-      <BrowserRouter>
-        <AppRoute />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <AppRoute />
+    </BrowserRouter>
   );
 }
