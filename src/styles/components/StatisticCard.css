@@ -1,0 +1,173 @@
+.statistics {
+  padding: 40px;
+  background: #020617;
+  min-height: 100vh;
+}
+
+.statistics-title {
+  color: #f8fafc;
+  font-size: 34px;
+  margin-bottom: 35px;
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.stat-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.blue {
+  background: #3b82f6;
+}
+
+.purple {
+  background: #8b5cf6;
+}
+
+.green {
+  background: #22c55e;
+}
+
+.orange {
+  background: #f59e0b;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-content h3 {
+  color: #94a3b8;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.stat-content span {
+  color: #f8fafc;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+}
+
+.stat-card h3 {
+  color: #94a3b8;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.stat-card span {
+  color: #f8fafc;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.team-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.team-card h2 {
+  color: #f8fafc;
+  margin-bottom: 25px;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.team-member:hover {
+  background: #334155;
+}
+
+.member-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+.team-member h4 {
+  color: #f8fafc;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  color: #94a3b8;
+}
+
+@media (max-width: 1024px) {
+  .statistics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statistics {
+    padding: 20px;
+  }
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+  .statistics-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    padding: 20px;
+  }
+  .stat-card span {
+    font-size: 30px;
+  }
+  .member-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
