@@ -1,6 +1,6 @@
 import { User } from "lucide-react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
+import "../styles/components/Navbar.css";
 
 export default function Navbar() {
   return (
