@@ -1,14 +1,14 @@
 import { useState, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import taskList from "../data/tasks";
 import teamList from "../data/team_members";
+import { useTasks } from "./Model";
 
 export default function TaskCard() {
   const { id } = useParams();
 
   const navigate = useNavigate();
 
-  const [tasks, setTasks] = useState(taskList);
+  const { tasks, setTasks } = useTasks();
 
   const task = useMemo(
     () => tasks.find((t) => t.id === Number(id)),
@@ -117,7 +117,7 @@ export default function TaskCard() {
           </>
         ) : (
           <>
-            <button onClick={() => navigate(`/tasks`)}>Return</button>
+            <button onClick={() => navigate(`/tasks`)}>←</button>
             <div>
               <h2>{task.title}</h2>
 
