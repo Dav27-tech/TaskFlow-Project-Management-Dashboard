@@ -9,6 +9,7 @@ export default function TaskCard() {
   const navigate = useNavigate();
 
   const [tasks, setTasks] = useState(taskList);
+  const [editingTask, setEditingTask] = useState(null);
 
   const task = useMemo(
     () => tasks.find((t) => t.id === Number(id)),
@@ -18,8 +19,6 @@ export default function TaskCard() {
   if (!task) {
     return <h2>Task not found</h2>;
   }
-
-  const [editingTask, setEditingTask] = useState(null);
 
   const handleStatus = (id) => {
     setTasks((prevTasks) =>
