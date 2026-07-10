@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../styles/Sidebar.css";
 
 export default function Sidebar() {
+  const nextId = useRef(200);
+
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -22,7 +24,7 @@ export default function Sidebar() {
       ...formData,
       name: formData.name.trim(),
       description: formData.description.trim(),
-      project_id: Date.now(),
+      project_id: nextId.current++,
     };
 
     const existing = JSON.parse(localStorage.getItem("projects") || "[]");
