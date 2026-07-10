@@ -116,7 +116,7 @@ export default function TaskCard() {
           </>
         ) : (
           <>
-            <button onClick={() => navigate(`/tasks`)}>Return</button>
+            <button onClick={() => navigate(`/tasks`)}>←</button>
             <div>
               <h2>{task.title}</h2>
 

@@ -36,13 +36,6 @@ const projectList = [
     due_date: "2026-09-05",
   },
   {
-    project_id: 6,
-    name: "Inventory System",
-    description: "Manage products, suppliers, and stock levels.",
-    status: true,
-    due_date: "2026-07-30",
-  },
-  {
     project_id: 7,
     name: "Learning Management System",
     description: "Create an online platform for courses and students.",
@@ -57,25 +50,11 @@ const projectList = [
     due_date: "2026-07-22",
   },
   {
-    project_id: 9,
-    name: "Fitness Tracker",
-    description: "Track workouts, calories, and health statistics.",
-    status: false,
-    due_date: "2026-09-12",
-  },
-  {
     project_id: 10,
     name: "Travel Booking System",
     description: "Allow users to book flights and hotels online.",
     status: false,
     due_date: "2026-10-01",
-  },
-  {
-    project_id: 11,
-    name: "CRM Dashboard",
-    description: "Customer relationship management platform.",
-    status: true,
-    due_date: "2026-07-18",
   },
   {
     project_id: 12,
@@ -90,20 +69,6 @@ const projectList = [
     description: "Manage books, members, and borrowing records.",
     status: true,
     due_date: "2026-07-25",
-  },
-  {
-    project_id: 14,
-    name: "Event Management Platform",
-    description: "Plan and organize conferences and events.",
-    status: false,
-    due_date: "2026-09-18",
-  },
-  {
-    project_id: 15,
-    name: "Weather Forecast App",
-    description: "Display weather forecasts using a public API.",
-    status: true,
-    due_date: "2026-08-05",
   },
 ];
 
