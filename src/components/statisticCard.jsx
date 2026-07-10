@@ -69,8 +69,7 @@ export default function StatisticCard() {
       </div>
 
       <div className="team-card">
-        <h2>Team Members</h2>
-
+        <h2>Team Members</h2> <hr />
         <div className="team-list">
           {teamList.map((member) => (
             <div className="team-member" key={member.id}>
