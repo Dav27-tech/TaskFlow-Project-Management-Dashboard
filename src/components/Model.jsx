@@ -3,6 +3,7 @@ import taskList from "../data/tasks";
 
 const TaskContext = createContext();
 
+/* eslint-disable react-refresh/only-export-components */
 export function TaskProvider({ children }) {
   const [tasks, setTasks] = useState(taskList);
 
