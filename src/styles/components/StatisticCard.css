@@ -100,10 +100,17 @@
   margin-bottom: 25px;
 }
 
+.team-card hr {
+  border: none;
+  height: 1px;
+  background: #505c9a;
+  margin-bottom: 20px;
+}
+
 .team-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 10px;
 }
 
 .team-member {
@@ -113,6 +120,7 @@
   padding: 15px;
   border-radius: 12px;
   transition: 0.3s;
+  border: 0.1px solid rgb(51, 61, 94);
 }
 
 .team-member:hover {
