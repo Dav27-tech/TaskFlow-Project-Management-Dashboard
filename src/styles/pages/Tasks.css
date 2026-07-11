@@ -1,0 +1,278 @@
+.tasks-page {
+  min-height: 100vh;
+  background: #020617;
+  color: #f8fafc;
+}
+
+.tasks-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.tasks-container main {
+  margin-top: 35px;
+  padding-right: 40px;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #f8fafc;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 15px;
+  padding: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.task-header h3 {
+  font-size: 22px;
+}
+
+.task-description {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priority {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.status {
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.completed {
+  background: #22c55e;
+  color: white;
+}
+
+.pending {
+  background: #f59e0b;
+  color: white;
+}
+
+.create-task {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-bottom-right-radius: 18px;
+  padding: 30px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.create-task form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+.row-input {
+  display: fleX;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-task input,
+.create-task textarea,
+.create-task select {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #334155;
+  color: white;
+  font-size: 15px;
+}
+.create-task textarea {
+  resize: none;
+}
+
+.assigned_title {
+  font-size: 22px;
+  padding: 20px 0 10px;
+}
+
+.assigned_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.react-datepicker {
+  background: #364a69 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 15px !important;
+  color: white;
+}
+
+.react-datepicker__header {
+  background: #2e3c5e !important;
+  border-bottom: 1px solid #334155 !important;
+}
+
+.react-datepicker__current-month {
+  color: #f8fafc !important;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.react-datepicker__day-name {
+  color: #94a3b8 !important;
+}
+
+.react-datepicker__day {
+  color: white !important;
+  border-radius: 8px;
+}
+
+.react-datepicker__day:hover {
+  background: #2e5aa1 !important;
+  color: white !important;
+}
+.react-datepicker__day--selected {
+  background: #3b82f6 !important;
+  color: white !important;
+}
+
+.react-datepicker__day--today {
+  color: #22c55e !important;
+  font-weight: bold;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: white !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #6f7d91 !important;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.date-picker {
+  width: 100%;
+  padding: 24px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #334155;
+  color: #f8fafc;
+  font-size: 15px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #3f7ad8;
+  border-radius: 50%;
+}
+
+.create-task hr {
+  margin-bottom: 25px;
+  border: none;
+  height: 1px;
+  background: #3f4d61;
+}
+
+.create-task button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.create-task button:hover {
+  background: #2563eb;
+}
+
+@media (max-width: 1024px) {
+  .tasks-container {
+    grid-template-columns: 1fr;
+  }
+  .create-task {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks-page {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .task-card {
+    padding: 18px;
+  }
+  .task-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .task-header h3 {
+    font-size: 18px;
+  }
+  .task-description {
+    font-size: 14px;
+  }
+  .create-task {
+    padding: 20px;
+  }
+}

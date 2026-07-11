@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: #0f172a;
+  border-bottom: 1px solid #334155;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-text {
+  color: #f8fafc;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #3b82f6;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.avatar:hover {
+  background: #334155;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+}
