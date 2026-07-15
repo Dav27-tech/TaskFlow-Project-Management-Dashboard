@@ -7,7 +7,7 @@ const taskList = [
     priority: "High",
     status: true,
     assigned_member: [1, 2],
-    due_date: "2026-07-05",
+    due_date: "05/07/2026",
   },
   {
     project_id: 2,
@@ -17,7 +17,7 @@ const taskList = [
     priority: "Medium",
     status: false,
     assigned_member: [3],
-    due_date: "2026-07-18",
+    due_date: "18/07/2026",
   },
   {
     project_id: 3,
@@ -27,7 +27,7 @@ const taskList = [
     priority: "High",
     status: true,
     assigned_member: [4, 8],
-    due_date: "2026-07-12",
+    due_date: "12/07/2026",
   },
   {
     project_id: 4,
@@ -37,7 +37,7 @@ const taskList = [
     priority: "Low",
     status: false,
     assigned_member: [1],
-    due_date: "2026-07-10",
+    due_date: "10/07/2026",
   },
   {
     project_id: 5,
@@ -47,7 +47,7 @@ const taskList = [
     priority: "High",
     status: false,
     assigned_member: [4, 5],
-    due_date: "2026-08-02",
+    due_date: "02/08/2026",
   },
   {
     project_id: 6,
@@ -57,7 +57,7 @@ const taskList = [
     priority: "Medium",
     status: true,
     assigned_member: [6],
-    due_date: "2026-07-20",
+    due_date: "20/07/2026",
   },
   {
     project_id: 7,
@@ -67,7 +67,7 @@ const taskList = [
     priority: "Medium",
     status: false,
     assigned_member: [7],
-    due_date: "2026-08-08",
+    due_date: "08/08/2026",
   },
   {
     project_id: 8,
@@ -77,7 +77,7 @@ const taskList = [
     priority: "High",
     status: true,
     assigned_member: [8],
-    due_date: "2026-07-16",
+    due_date: "16/07/2026",
   },
   {
     project_id: 9,
@@ -87,7 +87,7 @@ const taskList = [
     priority: "Medium",
     status: false,
     assigned_member: [9],
-    due_date: "2026-08-15",
+    due_date: "15/08/2026",
   },
   {
     project_id: 10,
@@ -97,7 +97,7 @@ const taskList = [
     priority: "High",
     status: false,
     assigned_member: [10],
-    due_date: "2026-08-25",
+    due_date: "25/08/2026",
   },
   {
     project_id: 11,
@@ -107,7 +107,7 @@ const taskList = [
     priority: "Medium",
     status: true,
     assigned_member: [2, 4],
-    due_date: "2026-07-22",
+    due_date: "22/07/2026",
   },
   {
     project_id: 12,
@@ -116,8 +116,8 @@ const taskList = [
     description: "Display available restaurants.",
     priority: "Low",
     status: false,
-    assigned_member: [5],
-    due_date: "2026-08-30",
+    assigned_member: [5, 9],
+    due_date: "10/09/2026",
   },
   {
     project_id: 13,
@@ -127,7 +127,7 @@ const taskList = [
     priority: "High",
     status: true,
     assigned_member: [3, 6, 7],
-    due_date: "2026-07-28",
+    due_date: "28/07/2026",
   },
   {
     project_id: 14,
@@ -137,7 +137,7 @@ const taskList = [
     priority: "Medium",
     status: false,
     assigned_member: [7, 8, 3],
-    due_date: "2026-09-10",
+    due_date: "10/09/2026",
   },
   {
     project_id: 15,
@@ -147,7 +147,7 @@ const taskList = [
     priority: "High",
     status: false,
     assigned_member: [1, 9],
-    due_date: "2026-08-05",
+    due_date: "05/08/2026",
   },
 ];
 
