@@ -1,11 +1,11 @@
 .sidebar {
   width: 320px;
-  min-height: 100vh;
+  min-height: calc(100vh - 75px);
   background: #1e293b;
   color: #e2e8f0;
   padding: 1.5rem;
   position: fixed;
-  top: 0;
+  top: 75px;
   left: 0;
   overflow-y: auto;
 }
