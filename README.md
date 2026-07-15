@@ -100,4 +100,3 @@ Follow these steps to run the project locally:
 
 TO  DO LIST :
 in the team page we are supposed to add team members ,edit ,delete ,add image ,Email
-sidebar change 
