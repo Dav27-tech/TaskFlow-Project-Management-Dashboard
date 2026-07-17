@@ -1,9 +1,8 @@
-// Import main components
-import StatisticCard from "../components/StatisticCard";
+import StatisticCard from "../components/statisticCard";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="container mt-4">
       <StatisticCard />
     </div>
   );

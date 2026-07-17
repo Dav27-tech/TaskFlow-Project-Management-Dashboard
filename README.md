@@ -96,3 +96,7 @@ Follow these steps to run the project locally:
 | TaskCard.jsx      | ProjecCard.jsx | -               |
 
 ---
+
+
+TO  DO LIST :
+in the team page we are supposed to add team members ,edit ,delete ,add image ,Email

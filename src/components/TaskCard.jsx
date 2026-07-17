@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import teamList from "../data/team_members";
 import { useTasks } from "./Model";
-// Import icons from lucide-react
 import {
   ArrowLeft,
   Pencil,
@@ -16,9 +15,7 @@ import {
   FileText,
   Type,
 } from "lucide-react";
-// Import the page CSS style
 import "../styles/components/TaskCard.css";
-// Import the Datetimepicker
 import DatePicker from "react-datepicker";
 
 export default function TaskCard() {
@@ -27,6 +24,7 @@ export default function TaskCard() {
   const navigate = useNavigate();
 
   const { tasks, setTasks } = useTasks();
+  const [editingTask, setEditingTask] = useState(null);
 
   const task = useMemo(
     () => tasks.find((t) => t.id === Number(id)),
@@ -52,8 +50,6 @@ export default function TaskCard() {
   if (!task) {
     return <h2>Task not found</h2>;
   }
-
-  const [editingTask, setEditingTask] = useState(null);
 
   const handleStatus = (id) => {
     setTasks((prevTasks) =>

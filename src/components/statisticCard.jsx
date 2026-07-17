@@ -6,7 +6,6 @@ import {
   ListTodo,
   CircleCheckBig,
   Clock3,
-  Users,
 } from "lucide-react";
 import "../styles/components/StatisticCard.css";
 

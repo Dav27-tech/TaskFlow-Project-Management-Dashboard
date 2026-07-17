@@ -1,6 +1,6 @@
-// Import Lucide icons
 import { Search, ListFilter } from "lucide-react";
 import "../styles/components/SearchBar.css";
+
 export default function SearchBar({
   search,
   setSearch,
@@ -13,7 +13,6 @@ export default function SearchBar({
     <div className="search-bar">
       <div className="search-box">
         <Search size={18} className="search-icon" />
-
         <input
           className="search-input"
           type="text"

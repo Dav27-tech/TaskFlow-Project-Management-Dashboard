@@ -1,19 +1,18 @@
 import { useState } from "react";
+import taskList from "../data/tasks";
 import teamList from "../data/team_members";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
-import { useTasks } from "../components/Model";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// Import the CSS style
 import "../styles/pages/Tasks.css";
 
 export default function Tasks() {
   const navigate = useNavigate();
 
-  const { tasks, setTasks } = useTasks();
+  const [tasks, setTasks] = useState(taskList);
   const handleClick = (id) => {
-    navigate(`/task/${id}`);
+    navigate(`/tasks/${id}`);
   };
 
   const parseDate = (dateString) => {
@@ -37,12 +36,10 @@ export default function Tasks() {
   const [priorityFilter, setPriorityFilter] = useState("all");
 
   const filteredTasks = tasks.filter((task) => {
-    // Filter by search by title and description
     const matchesSearch =
       task.title.toLowerCase().includes(search.toLowerCase()) ||
       task.description.toLowerCase().includes(search.toLowerCase());
 
-    // Filter by status
     const matchesStatus =
       statusFilter === "all" ||
       (statusFilter === "completed" && task.status) ||
@@ -90,7 +87,7 @@ export default function Tasks() {
       priority: "Medium",
       status: false,
       assigned_member: [],
-      due_date: null,
+      due_date: "",
     });
   };
 

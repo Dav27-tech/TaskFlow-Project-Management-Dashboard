@@ -1,6 +1,6 @@
 import { User } from "lucide-react";
 import { Link } from "react-router-dom";
-import "../styles/components/Navbar.css";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
   return (
@@ -19,7 +19,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/projects">
               Projects
             </Link>
           </li>
@@ -31,13 +31,13 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/team">
               Team
             </Link>
           </li>
 
           <li>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/about">
               About
             </Link>
           </li>
