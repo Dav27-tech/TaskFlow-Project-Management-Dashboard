@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App.jsx";
 import { TaskProvider } from "./components/Model.jsx";
 
+import router from "./router";
+
 ReactDom.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <TaskProvider>
