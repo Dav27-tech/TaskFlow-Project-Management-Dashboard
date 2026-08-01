@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Tasks from "../pages/Tasks";
 import TaskDetails from "../pages/TaskDetails";
 import About from "../pages/About";
+import NotFound from "../pages/NotFound";
 
 export default function AppRoute() {
   return (
@@ -13,6 +14,7 @@ export default function AppRoute() {
       <Route path="/tasks" element={<Tasks />} />
       <Route path="/task/:id" element={<TaskDetails />} />
       <Route path="/about" element={<About />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
